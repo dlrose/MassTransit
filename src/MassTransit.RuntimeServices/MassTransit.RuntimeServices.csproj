@@ -79,8 +79,9 @@
     <Reference Include="NHibernate" Condition="'$(TargetFrameworkVersion)' == 'v4.0'">
       <HintPath>..\packages\NHibernate.4.0.1.4000\lib\Net40\NHibernate.dll</HintPath>
     </Reference>
-    <Reference Include="StructureMap" Condition="'$(TargetFrameworkVersion)' == 'v4.0'">
-      <HintPath>..\packages\StructureMap.3.1.2.138\lib\net40\StructureMap.dll</HintPath>
+    <Reference Include="StructureMap, Version=2.6.4.0, Culture=neutral, PublicKeyToken=e60ad81abae3c223, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\structuremap.2.6.4.1\lib\net40\StructureMap.dll</HintPath>
     </Reference>
     <Reference Include="Topshelf" Condition="'$(TargetFrameworkVersion)' == 'v4.0'">
       <HintPath>..\packages\Topshelf.3.1.4\lib\net40-full\Topshelf.dll</HintPath>
