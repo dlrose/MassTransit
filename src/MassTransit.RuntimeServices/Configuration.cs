@@ -20,7 +20,8 @@ namespace MassTransit.RuntimeServices
 
     public class Configuration :
 		IConfiguration
-	{
+    {
+        const string PerformanceCountersEnabledKey = "PerformanceCountersEnabled";
 		const string HealthServiceDataUriKey = "HealthServiceDataUri";
 		const string HealthServiceEnabledKey = "HealthServiceEnabled";
 		const string ServicePasswordKey = "ServicePassword";
@@ -47,11 +48,15 @@ namespace MassTransit.RuntimeServices
 			get { return GetApplicationSetting(ServicePasswordKey, string.Empty); }
 		}
 
-		public bool SubscriptionServiceEnabled
+        public bool PerformanceCountersEnabled
 		{
-			get { return GetApplicationSetting(SubscriptionServiceEnabledKey, true); }
+            get { return GetApplicationSetting(PerformanceCountersEnabledKey, false); }
 		}
 
+        public bool SubscriptionServiceEnabled
+        {
+            get { return GetApplicationSetting(SubscriptionServiceEnabledKey, true); }
+        }
 		public Uri SubscriptionServiceUri
 		{
 			get { return GetUriApplicationSetting(SubscriptionServiceUriKey); }

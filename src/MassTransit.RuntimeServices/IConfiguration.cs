@@ -15,7 +15,9 @@ namespace MassTransit.RuntimeServices
 	using System;
 
 	public interface IConfiguration
-	{
+    {
+        bool PerformanceCountersEnabled { get; }
+
 		bool HealthServiceEnabled { get; }
 		Uri HealthServiceDataUri { get; }
 

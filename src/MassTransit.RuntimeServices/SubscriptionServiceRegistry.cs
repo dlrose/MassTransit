@@ -51,6 +51,10 @@ namespace MassTransit.RuntimeServices
         {
             return ServiceBusFactory.New(sbc =>
             {
+                if (!configuration.PerformanceCountersEnabled)
+                {
+                    sbc.DisablePerformanceCounters();
+                }
                 sbc.ReceiveFrom(configuration.SubscriptionServiceUri);
                 sbc.UseLog4Net();
                 sbc.UseMsmq();
